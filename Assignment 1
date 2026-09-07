@@ -1,1 +1,21 @@
+# 1. Create a tuple
+my_tuple = ("apple", "banana", "cherry")
+print("Original tuple:", my_tuple)
+
+# 2. Access an item
+print("First item:", my_tuple[0])
+
+# 3. Find length
+print("Length of tuple:", len(my_tuple))
+
+# 4. Count occurrences
+print("Count of 'apple':", my_tuple.count("apple"))
+
+# 5. "Append" or "Remove" workaround (using conversion to list)
+temp_list = list(my_tuple)
+temp_list.append("orange")    # Add item
+temp_list.remove("banana")    # Remove item
+my_tuple = tuple(temp_list)
+
+print("Modified tuple:", my_tuple)
 
