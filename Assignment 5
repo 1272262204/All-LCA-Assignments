@@ -1,1 +1,8 @@
+def check_string_builtin(input_string):
+    # Returns True if all characters are alphanumeric and the string is not empty
+    return input_string.isalnum()
 
+# Test Cases
+print(check_string_builtin("ABCDEFabcdef123450"))  # Output: True
+print(check_string_builtin("Hello World"))         # Output: False (contains a space)
+print(check_string_builtin("Python3!"))            # Output: False (contains !)
