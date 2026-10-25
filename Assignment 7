@@ -1,1 +1,21 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+df = pd.read_csv("data.csv")  # Load dataset
+
+# Line plot
+df.plot(kind='line')
+plt.show()
+
+# Bar plot
+df.plot(kind='bar')
+plt.show()
+
+# Scatter plot
+plt.scatter(df.iloc[:, 0], df.iloc[:, 1])
+plt.show()
+
+# Heatmap
+sns.heatmap(df.select_dtypes('number').corr(), annot=True)
+plt.show()
