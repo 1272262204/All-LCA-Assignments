@@ -1,1 +1,17 @@
+import pandas as pd
 
+file = input("Enter file name (.csv/.xls): ")
+
+if file.endswith(".csv"):
+    df = pd.read_csv(file)
+else:
+    df = pd.read_excel(file)
+
+df.drop_duplicates(inplace=True)
+df.fillna(df.select_dtypes(include="number").mean(), inplace=True)
+df.dropna(inplace=True)
+
+df.to_csv("cleaned_data.csv", index=False)
+
+print("Data preprocessing completed!")
+print(df.head())
